@@ -1,0 +1,30 @@
+<!--Azad Kemerbendi-->
+<div id="menu">
+    <button data-action="save">Save</button>
+    <button data-action="load">Upload</button>
+    <button data-action="search">Search</button>
+</div>
+<script>
+    function Menu(elem) {
+        this.save = function () {
+            alert('Save');
+        };
+        this.load = function () {
+            alert('Uploaded');
+        };
+        this.search = function () {
+            alert('Search');
+        };
+        var self = this;
+        console.log(this);
+        elem.onclick = function (e) {
+            var target = e.target;
+            var action = target.getAttribute('data-action');
+            if (action) {
+                self[action]();
+            }
+        };
+    }
+
+    new Menu(menu);
+</script>

@@ -1,0 +1,22 @@
+<style>
+    button {
+        transition: width 1s;
+        width: 100px;
+    }
+
+    .wide {
+        width: 300px;
+    }
+</style>
+
+<button id="elem" onclick="this.classList.toggle('wide');">
+    Click me
+</button>
+
+<script>
+    var a = document.querySelector("#clock");
+    elem.addEventListener("transitionend", function () {
+        document.body.style.backgroundColor = '#cccccc';
+        document.body.style.transition = '3s';
+    });
+</script>
