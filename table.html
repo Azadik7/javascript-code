@@ -1,0 +1,59 @@
+<!--Azad kemerbendi-->
+!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        table tr td {
+            border: 1px solid #ccc;
+        }
+        .highlight {
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+
+<body>
+<table id="table">
+    <tr><td><div><span>One!</span></div></td> <td>Two</td> <td>Three</td><td>Four</td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td>Four</td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td>Four</td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td>Four</td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td><span>Four</span></td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td><span>Four</span></td></tr>
+    <tr><td>One</td> <td>Two</td> <td>Three</td><td><span>Four</span></td></tr>
+</table>
+
+<script>
+    var selectedTd;
+    table.onclick = function(event) {
+        var target = event.target;
+//        while (target != this ) {
+        while (target != table ) {
+            if (target.tagName == 'TD') {
+                highlight(target);
+                return;
+            }
+            target = target.parentNode;
+        }
+
+//        var td = target.closest('td');
+//        if(!td) return;
+//        if (!table.contains(td)) return;
+//        highlight(td);
+
+    }
+
+
+    function highlight(node) {  console.log(node);
+        if (selectedTd) {
+            selectedTd.classList.remove('highlight');
+        }
+        selectedTd = node;
+        selectedTd.classList.add('highlight');
+    }
+</script>
+
+</body>
+
+</html>
