@@ -1,12 +1,12 @@
 <!-- Azad Kemerbendi 04.11.2017  13:51 -->
 Counter:
-<button data‐counter>1</button>
+<button data-counter>1</button>
 one more counter:
-<button data‐counter>2</button>
+<button data-counter>2</button>
 <script>
     document.onclick = function (event) {
-        if (!event.target.hasAttribute('data‐counter')) return;
+        if (!event.target.hasAttributes('data-counter')) return;
         var counter = event.target;
         counter.innerHTML++;
-    };
+    }
 </script>
