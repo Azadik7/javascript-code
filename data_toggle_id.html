@@ -13,7 +13,16 @@
     Your E-Mail: <input type="email">
 </form>
 
-<script type="text/javascript" src="js.js"></script>
+<script>
+    document.onclick = function (event) {
+        var target = event.target;
+        var id = target.getAttribute('data-toggle-id');
+        if (!id) return;
+        var elem = document.getElementById(id);
+        elem.hidden = !elem.hidden;
+        console.log(!elem.hidden);
+    }
+</script>
 
 </body>
 </html>
