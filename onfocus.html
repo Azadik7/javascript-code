@@ -1,0 +1,26 @@
+<!-- Azad Kemerbendi 04.11.2017  13:51 -->
+<style>
+    .error {
+        border-color: red;
+    }
+</style>
+
+How old are you?: <input type="text" id="input">
+<div id="error"></div>
+
+<script>
+    input.onblur = function () {
+        if (isNaN(this.value)) {
+            this.className = 'error';
+            error.innerHTML = "You typed no number. Change please!";
+        }
+    }
+
+    input.onfocus = function () {
+        if (this.className == "error") {
+            this.className = "";
+            error.innerHTML = "";
+        }
+    }
+</script>
+
